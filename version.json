@@ -4,13 +4,16 @@
   "app": "FM27首席AI助教",
   "version": "4.0.0",
   "version_label": "V4.0",
-  "release_date": "2026-11-19",
+  "release_date": "2026-11-20",
   "update_type": "full",
   "force": false,
   "patch_base_version": "",
   "changelog": [
-    "【新增高定主题包（.fmpack）引擎：支持「魔力鸟」2D动态桌宠、曜石黑西装暗纹与异形破框皮肤、VIP战报图及专属实战战术库"】",
-    "【新增跨天历史对话与「自动近48小时记忆」、顶部「锁定主队」胶囊、语音转文字对话及在线检查更新"】"
+    "1. 【锁定主队集成常驻阵容档案】转会窗连拍1~5张名单图或拖入CSV/Excel表格建档，全赛季秒记30人底牌，聊轮换引援无需反复截屏；",
+    "2. 【无感锁窗只截FM27】全链路精准锁定FM27游戏画面区域截图，不切屏不打扰、零桌面隐私泄露，网页版直通车同步支持；",
+    "3. 【游戏内按键说话+内置离线语音】支持鼠标侧键/默认T键按住说话及点击切换，内置高精度中文离线语音模型，零配置秒转文字；",
+    "4. 【跨天历史与近48小时低Token记忆】支持随时查看历史复盘，自动提炼同主队近48小时纯文本精华记忆并优化全接口提速；",
+    "5. 【高定主题包引擎与在线更新】支持一键拖入高定主题包（专属皮肤/破框立绘/2D桌面小人/VIP战报），设置页新增一键检查更新。"
   ],
   "patch_file": "",
   "patch_url": "",
@@ -20,8 +23,8 @@
   "full_url": "https://github.com/Owenfast/FM27-Release/releases/download/v4.0.0/FM27.AI._V4.0_.zip",
   "_full_url_说明": "GitHub 会改掉中文文件名：上传完整包后，把 Release 页面里它的真实下载地址填进 full_url（可空，空着就走网盘）。",
   "full_file": "FM27首席AI助教_V4.0_旗舰正式版.zip",
-  "full_size": 64659660,
-  "full_sha256": "88f87366894b196575ec56102cf303f56b931342820e3b097be54158aea0d3fa",
+  "full_size": 124864849,
+  "full_sha256": "6229d31135e88db4cb1b1fd61d6468dfe2fcab76801f6a8e1b59eb4308c55165",
   "mirrors": [
     {
       "name": "ghfast.top",
@@ -41,8 +44,8 @@
     }
   ],
   "fallback_pan": {
-    "url": "",
-    "code": "",
+    "url": "https://pan.baidu.com/s/1Juav7vy5OcEM5rw6X4PNYg?pwd=c5rj",
+    "code": "c5rj",
     "note": "镜像都下载不动时：去网盘下载完整绿色版，解压后用新的 app 文件夹整个替换旧的 app 文件夹即可，外层的 config.json 和「战报存档」不要动。"
   }
 }
