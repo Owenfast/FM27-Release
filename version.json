@@ -1,0 +1,48 @@
+{
+  "_说明": "发版前请修改 changelog、fallback_pan 和 full_url，并核对 GitHub 仓库地址。把 FM27_Patch_v4.0.0.zip 和本文件上传到 GitHub Release（tag 为 v4.0.0），同时把本文件提交到仓库 main 分支根目录（客户端优先读 raw 地址）。以下划线开头的字段客户端会忽略。",
+  "schema": 1,
+  "app": "FM27首席AI助教",
+  "version": "4.0.0",
+  "version_label": "V4.0",
+  "release_date": "2026-11-19",
+  "update_type": "full",
+  "force": false,
+  "patch_base_version": "",
+  "changelog": [
+    "【新增高定主题包（.fmpack）引擎：支持「魔力鸟」2D动态桌宠、曜石黑西装暗纹与异形破框皮肤、VIP战报图及专属实战战术库"】",
+    "【新增跨天历史对话与「自动近48小时记忆」、顶部「锁定主队」胶囊、语音转文字对话及在线检查更新"】"
+  ],
+  "patch_file": "",
+  "patch_url": "",
+  "patch_size": 0,
+  "patch_size_mb": 0,
+  "patch_sha256": "",
+  "full_url": "https://github.com/Owenfast/FM27-Release/releases/download/v4.0.0/FM27.AI._V4.0_.zip",
+  "_full_url_说明": "GitHub 会改掉中文文件名：上传完整包后，把 Release 页面里它的真实下载地址填进 full_url（可空，空着就走网盘）。",
+  "full_file": "FM27首席AI助教_V4.0_旗舰正式版.zip",
+  "full_size": 64659660,
+  "full_sha256": "88f87366894b196575ec56102cf303f56b931342820e3b097be54158aea0d3fa",
+  "mirrors": [
+    {
+      "name": "ghfast.top",
+      "prefix": "https://ghfast.top/"
+    },
+    {
+      "name": "ghproxy.net",
+      "prefix": "https://ghproxy.net/"
+    },
+    {
+      "name": "gh-proxy.com",
+      "prefix": "https://gh-proxy.com/"
+    },
+    {
+      "name": "GitHub直连",
+      "prefix": ""
+    }
+  ],
+  "fallback_pan": {
+    "url": "",
+    "code": "",
+    "note": "镜像都下载不动时：去网盘下载完整绿色版，解压后用新的 app 文件夹整个替换旧的 app 文件夹即可，外层的 config.json 和「战报存档」不要动。"
+  }
+}
