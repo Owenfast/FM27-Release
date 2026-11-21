@@ -43,8 +43,8 @@
     }
   ],
   "fallback_pan": {
-    "url": "【请填写网盘链接】",
-    "code": "【提取码】",
+    "url": "https://pan.baidu.com/s/1Juav7vy5OcEM5rw6X4PNYg?pwd=c5rj",
+    "code": "c5rj",
     "note": "镜像都下载不动时：去网盘下载完整绿色版，解压后用新的 app 文件夹整个替换旧的 app 文件夹即可，外层的 config.json 和「战报存档」不要动。"
   }
 }
