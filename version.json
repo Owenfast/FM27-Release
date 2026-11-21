@@ -1,30 +1,29 @@
 {
-  "_说明": "发版前请修改 changelog、fallback_pan 和 full_url，并核对 GitHub 仓库地址。把 FM27_Patch_v4.1.1.zip 和本文件上传到 GitHub Release（tag 为 v4.1.1），同时把本文件提交到仓库 main 分支根目录（客户端优先读 raw 地址）。以下划线开头的字段客户端会忽略。",
+  "_说明": "发版前请修改 changelog、fallback_pan 和 full_url，并核对 GitHub 仓库地址。把 FM27_Patch_v5.0.0.zip 和本文件上传到 GitHub Release（tag 为 v5.0.0），同时把本文件提交到仓库 main 分支根目录（客户端优先读 raw 地址）。以下划线开头的字段客户端会忽略。",
   "schema": 1,
   "app": "FM27首席AI助教",
-  "version": "4.1.1",
-  "version_label": "V4.1.1",
-  "release_date": "2026-11-20",
+  "version": "5.0.0",
+  "version_label": "V5.0",
+  "release_date": "2026-11-21",
   "update_type": "patch",
   "force": false,
-  "patch_base_version": "4.0.0",
+  "patch_base_version": "4.1.1",
   "changelog": [
-    "1. 【打开界面自动定位最新消息 + 超小/足球悬浮档位】展开助教或切换板块自动滚至最新对话；设置新增「超小」（桌宠与面板同步紧凑 17%）与「足球」（大桌宠皮肤也可一键收起为圆形足球悬浮球）档位；",
-    "2. 【球探/阵容页忘按拍照自动补拍】文字/语音提及当前球探、一线队、候选人、报价单等界面内容时自动抓屏 FM27 窗口补拍分析（纯规则提问不补拍，未开游戏绝不截桌面）；",
-    "3. 【FM27 27.1.0 角色硬性锁定规则】杜绝角色指令与阶段幻觉：明确组织核心类角色系统锁死“增加冒险传球”（禁推减少冒险传球），严格限定固守型边卫/屏障型后腰/阻截补位中卫仅限【无球阶段】；",
-    "4. 【硅基流动等接口球队建档连拍防超时】多图（≥2张）自动降维至 1920px WebP q=80 省流并保留锐化；超 2 张自动按每批最多 2 张分批提取并合并去重，底层统一开启 stream=True 流式保活 + 120 秒单批超时；",
-    "5. 【彻底消除人设串味 + 双版本兼容热更】前后端联动隔离旧人设回复与跨角色触发词，48h 摘要头部标注严格以当前人设作答；4.97 MB 补丁同时支持 V4.0.0 与 V4.1.0 一键热更。"
+    "新增「实时内存直连」（纯只读不改档，默认关闭，设置页开启），毫秒同步一线队名单、36 项属性、体能、锐度、隐藏疲劳与合同",
+    "直连状态自动锁定执教主队，问阵容、体能、轮换无需再截屏，秒速响应并大幅降低 Token 消耗",
+    "新增独立「球探上帝视角」开关（默认关闭防剧透，开启后可直报真实 CA/PA 数值）",
+    "完整保留 V4 截屏识图作无缝保底，游戏更新小补丁时自动平滑退回截屏模式"
   ],
-  "patch_file": "FM27_Patch_v4.1.1.zip",
-  "patch_url": "https://github.com/Owenfast/FM27-Release/releases/download/v4.1.1/FM27_Patch_v4.1.1.zip",
-  "patch_size": 5208706,
-  "patch_size_mb": 4.97,
-  "patch_sha256": "52a97459375c82cd7bf0000fa04659d9c7e7a19d607a5ea850c2bf5aaa3561bd",
-  "full_url": "https://github.com/Owenfast/FM27-Release/releases/download/v4.1.1/FM27.AI._V4.1.1_.zip",
+  "patch_file": "FM27_Patch_v5.0.0.zip",
+  "patch_url": "https://github.com/Owenfast/FM27-Release/releases/download/v5.0.0/FM27_Patch_v5.0.0.zip",
+  "patch_size": 5468784,
+  "patch_size_mb": 5.22,
+  "patch_sha256": "33d4ef67afc812b033a4e5d556ed44907bc8e75192d90f67d979f9f43d72e71f",
+  "full_url": "",
   "_full_url_说明": "GitHub 会改掉中文文件名：上传完整包后，把 Release 页面里它的真实下载地址填进 full_url（可空，空着就走网盘）。",
-  "full_file": "FM27首席AI助教_V4.1.1_旗舰正式版.zip",
-  "full_size": 124973355,
-  "full_sha256": "51fc34f4741ec61303ce8bd7994497d186b04c0aea15fabb340503cd79733829",
+  "full_file": "FM27首席AI助教_V5.0_旗舰正式版.zip",
+  "full_size": 125239395,
+  "full_sha256": "963f3fda5c61e418fb005062db98b2d7eca60bc81360a29f7c4ffad8271c5db9",
   "mirrors": [
     {
       "name": "ghfast.top",
@@ -44,8 +43,8 @@
     }
   ],
   "fallback_pan": {
-    "url": "https://pan.baidu.com/s/1Juav7vy5OcEM5rw6X4PNYg?pwd=c5rj",
-    "code": "c5rj",
+    "url": "【请填写网盘链接】",
+    "code": "【提取码】",
     "note": "镜像都下载不动时：去网盘下载完整绿色版，解压后用新的 app 文件夹整个替换旧的 app 文件夹即可，外层的 config.json 和「战报存档」不要动。"
   }
 }
