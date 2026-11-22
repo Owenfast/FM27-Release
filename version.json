@@ -1,29 +1,29 @@
 {
-  "_说明": "发版前请修改 changelog、fallback_pan 和 full_url，并核对 GitHub 仓库地址。把 FM27_Patch_v5.0.1.zip 和本文件上传到 GitHub Release（tag 为 v5.0.1），同时把本文件提交到仓库 main 分支根目录（客户端优先读 raw 地址）。以下划线开头的字段客户端会忽略。",
+  "_说明": "发版前请修改 changelog、fallback_pan 和 full_url，并核对 GitHub 仓库地址。把 FM27_Patch_v5.1.0.zip 和本文件上传到 GitHub Release（tag 为 v5.1.0），同时把本文件提交到仓库 main 分支根目录（客户端优先读 raw 地址）。以下划线开头的字段客户端会忽略。",
   "schema": 1,
   "app": "FM27首席AI助教",
-  "version": "5.0.1",
-  "version_label": "V5.0.1",
+  "version": "5.1.0",
+  "version_label": "V5.1",
   "release_date": "2026-11-21",
   "update_type": "patch",
   "force": false,
-  "patch_base_version": "5.0.0",
+  "patch_base_version": "5.0.1",
   "changelog": [
-    "全面校准 FM27 15 项场上位置、36 项常规属性、11 项门将专属属性与左右惯用脚，彻底修复位置错位与属性低 1 点偏差",
-    "新增全梯队（一线队+U21+U18）潜力/年龄联合排行、任意单项/双速全队排行，以及外租球员精准隔离与按需检索（显示外租去向）",
-    "支持优先读取球员常用名与本地中文补丁（.lnc），新增自定义别名持久化、旧档案自动去重与防覆盖保护，且自动备份旧常驻阵容",
-    "优化直连提问摘要体积与外文名称呼/中文战术术语规范，冷扫描提速至毫秒级，回答更快更稳更省流"
+    "新增高定主题包（.fmpack）在线静默热更新引擎：后续战术库/台词升级自动静默同步，本地全程密文缓存、硬盘零明文",
+    "补齐统一 MD 档案中心后端安全接口：支持单锁防覆盖修改译名/备注/离线伤病、8 秒撤销、全量校准毫秒重扫与 3 份滚动快照恢复",
+    "同步更新 11/21 最新 FM27 实测通用知识库与魔力鸟专属战术库（补录熟悉度分区、耐力/自然体质区分、特质边界与 ARGUS P94 等新实测）",
+    "保留 100% 向下兼容 V5.0.0/V5.0.1 热更协议与离线截屏模式，启动零额外开销"
   ],
-  "patch_file": "FM27_Patch_v5.0.1.zip",
-  "patch_url": "https://github.com/Owenfast/FM27-Release/releases/download/v5.0.1/FM27_Patch_v5.0.1.zip",
-  "patch_size": 5529604,
-  "patch_size_mb": 5.27,
-  "patch_sha256": "1136c0eb623f838b68aacf4389ebcc678f403dafda828cc86e2243a2d34eaf92",
+  "patch_file": "FM27_Patch_v5.1.0.zip",
+  "patch_url": "https://github.com/Owenfast/FM27-Release/releases/download/v5.1.0/FM27_Patch_v5.1.0.zip",
+  "patch_size": 5653279,
+  "patch_size_mb": 5.39,
+  "patch_sha256": "62d097ce8a824e13f6a6706aa0e02c2f2641d4ebf2fc1c6a0b1a6d769b242bdb",
   "full_url": "",
   "_full_url_说明": "GitHub 会改掉中文文件名：上传完整包后，把 Release 页面里它的真实下载地址填进 full_url（可空，空着就走网盘）。",
-  "full_file": "FM27首席AI助教_V5.0.1_旗舰正式版.zip",
-  "full_size": 125300218,
-  "full_sha256": "2e97bd78c641598700af832fad13ed29257f83d2a5fbc88b902ed8525af0f038",
+  "full_file": "FM27首席AI助教_V5.1_旗舰正式版.zip",
+  "full_size": 125423891,
+  "full_sha256": "e847fff6e1780cda12e8e4742f3e0fe2456de3258e3b5a3783449622745d05ae",
   "mirrors": [
     {
       "name": "ghfast.top",
@@ -46,5 +46,15 @@
     "url": "https://pan.baidu.com/s/1Juav7vy5OcEM5rw6X4PNYg?pwd=c5rj",
     "code": "c5rj",
     "note": "镜像都下载不动时：去网盘下载完整绿色版，解压后用新的 app 文件夹整个替换旧的 app 文件夹即可，外层的 config.json 和「战报存档」不要动。"
+  },
+  "theme_patches": {
+    "mourinho_special_one": {
+      "version": "1.2.0",
+      "min_pack_version": "1.1.0",
+      "min_app_version": "5.1.0",
+      "url": "https://github.com/Owenfast/FM27-Release/releases/download/v5.1.0/mourinho_special_one_patch_1.2.0.enc",
+      "sha256": "0b3f36e6c12b201fa4781eb6f14d8ac68debd01ebb3c95e2604e41530919056c",
+      "size": 7940
+    }
   }
 }
