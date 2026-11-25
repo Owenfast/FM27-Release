@@ -1,0 +1,387 @@
+{
+  "schema_version": "5.3.0",
+  "target_module": "game_plugin.dll",
+  "notes": "FM27 V5.0.1 声明式只读字段表。steam_27.1.0 已于本机热刺存档实机校准：PE 指纹、多路游戏日期链、15 项位置字节顺序(+0x150)、54B 属性块精确索引(36常规+11门将专属+左右脚)、CommonName(+0x2E8)、外租现效队(+0x130 vs +0x330)、兼任教练 +0xF8 偏移及体能/锐度/疲劳/CA/PA。",
+  "builds": {
+    "steam_27.1.0": {
+      "label": "FM27 27.1.0 (Steam Win64 - Calibrated V5.0.1)",
+      "store": "steam",
+      "game_version": "27.1.0",
+      "build_fingerprint": "pe:6af5c68f:18878000:187fab83:72f1e18572fe6a40",
+      "module": "game_plugin.dll",
+      "roots": {
+        "game_date_chains": [
+          [92714624, 112],
+          [92714704, 112],
+          [92714264, 188]
+        ],
+        "game_date_rva": 92782872,
+        "human_manager_rva": 92720632,
+        "human_vector_rva": 92794656,
+        "club_list_rva": 92781168,
+        "team_list_rva": 92781312,
+        "player_list_rva": 92780728
+      },
+      "chains": {
+        "human_to_first_team": ["+0xa8", "+0x10"],
+        "team_to_club": ["+0x30"],
+        "club_to_teams_vec": ["+0x18"],
+        "team_to_squad_vec": ["+0x38"],
+        "player_to_current_team": ["+0x130"]
+      },
+      "vtables": {
+        "player_rva": 82351064,
+        "player_staff_rva": 84847656,
+        "playing_data_rva": 80323304,
+        "team_rva": 82063160,
+        "club_rva": 82035144,
+        "full_contract_rva": 80076712,
+        "club_finance_full_rva": 82127928,
+        "club_finance_base_rva": 82126696
+      },
+      "subtype_insertions": {
+        "player_staff": {
+          "status": "verified",
+          "insert_after_offset": 640,
+          "shift_bytes": 248,
+          "note": "真机 RTTI + 样本实测确认：PLAYING_DATA/体能/锐度/CA/PA 在 0x280 前不偏移，PERSON 块自 0x288 起后移 +0xF8 (248 B)"
+        }
+      }
+    },
+    "steam_27.1.0_20261124": {
+      "label": "FM27 Steam 2026-11-24 更新（构建 26797085，game_plugin 编译于 2026-11-19）",
+      "store": "steam",
+      "game_version": "27.1.0-20261124",
+      "build_fingerprint": "pe:6aff57a2:1849a000:1842246f:7a2b9a89ffcedef5",
+      "module": "game_plugin.dll",
+      "note": "2026-11-24 热刺存档实机只读校准：对象结构与字段偏移未变；玩家主帅全局指针 +0x20（0x586CDF8 -> 0x586CE18），兼任教练球员虚表 0x50EAC28 -> 0x50EAAF8，合同/比赛数据虚表各 +0x10；日期链、俱乐部/球队/球员全局向量与其余虚表原址不变。旧版直读日期全局与玩家主帅向量未在新版重新定位（代码不依赖，置空）",
+      "roots": {
+        "game_date_chains": [
+          [92714624, 112],
+          [92714704, 112],
+          [92714264, 188]
+        ],
+        "game_date_rva": null,
+        "human_manager_rva": 92720664,
+        "human_vector_rva": null,
+        "club_list_rva": 92781168,
+        "team_list_rva": 92781312,
+        "player_list_rva": 92780728
+      },
+      "chains": {
+        "human_to_first_team": ["+0xa8", "+0x10"],
+        "team_to_club": ["+0x30"],
+        "club_to_teams_vec": ["+0x18"],
+        "team_to_squad_vec": ["+0x38"],
+        "player_to_current_team": ["+0x130"]
+      },
+      "vtables": {
+        "player_rva": 82351064,
+        "player_staff_rva": 84847352,
+        "playing_data_rva": 80323320,
+        "team_rva": 82063160,
+        "club_rva": 82035144,
+        "full_contract_rva": 80076728,
+        "club_finance_full_rva": 82127928,
+        "club_finance_base_rva": 82126696
+      },
+      "subtype_insertions": {
+        "player_staff": {
+          "status": "verified",
+          "insert_after_offset": 640,
+          "shift_bytes": 248,
+          "note": "沿用 27.1.0：2026-11-24 新版实机抽样兼任教练球员，PERSON 块后移 +0xF8 不变"
+        }
+      }
+    },
+    "xgp_27.1.0": {
+      "label": "FM27 27.1.0 (Game Pass / Microsoft Store Win64)",
+      "store": "xgp",
+      "game_version": "27.1.0",
+      "build_fingerprint": "UNVERIFIED_RUN_CALIBRATOR_XGP_27_1_0",
+      "module": "game_plugin.dll",
+      "roots": {
+        "game_date_rva": null,
+        "human_manager_rva": null,
+        "club_list_rva": null,
+        "team_list_rva": null,
+        "player_list_rva": null
+      },
+      "vtables": {
+        "player_rva": null,
+        "player_staff_rva": null,
+        "team_rva": null,
+        "club_rva": null
+      },
+      "subtype_insertions": {
+        "player_staff": {
+          "status": "unverified",
+          "insert_after_offset": 640,
+          "shift_bytes": 248,
+          "note": "须商店版真机核验"
+        }
+      }
+    }
+  },
+  "fields": {
+    "game_date": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "fm_date_masked",
+      "offset": 0,
+      "doy_mask": 511,
+      "validation": {"min_year": 2020, "max_year": 2150},
+      "note": "多路全局日期链 GAME_UI+0x70 / SAVE_SYSTEM+0x70 / MATCHDAY_MANAGER+0xBC"
+    },
+    "human_club_uid": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u32",
+      "offset": 12,
+      "validation": {"min": 1, "max": 2147483647},
+      "note": "CLUB+0x0C（实测 托特纳姆热刺 UID=728）"
+    },
+    "human_club_name": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "len_utf8_ptr",
+      "offset": 200,
+      "validation": {"max_bytes": 128},
+      "note": "CLUB+0xC8 -> [u32 len][utf8]（简称）；CLUB+0xC0 为全称"
+    },
+    "team_age_cap": {"group": "basic", "is_spoiler": false, "status": "verified", "type": "u8", "offset": 44, "note": "TEAM+0x2C 年龄上限（2026-11-23 steam_27.1.0 热刺实机：一线队 100 / U21 21 / U18 18），与 TEAM+0x28 分类联合生成 U18~U23 / 预备队标签"},
+    "teams": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "vector_ptr",
+      "offset": 24,
+      "team_type_offset": 40,
+      "squad_vec_offset": 56,
+      "current_team_offset": 304,
+      "validation": {"max_count": 32},
+      "note": "CLUB+0x18 梯队向量；TEAM+0x28 team_type(0=一线队,10=U21,12=U18)；PLAYER+0x130 为现效 TEAM*（与母队不同即为外租）"
+    },
+    "uid": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u32",
+      "offset": 660,
+      "validation": {"min": 1, "max": 2147483647},
+      "note": "ACTUAL_PLAYER+0x294（兼任教练 +0xF8 -> 0x38C）"
+    },
+    "name": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "si_name_pair",
+      "offset": 728,
+      "last_name_offset": 736,
+      "common_name_offset": 744,
+      "common_name_status": "verified",
+      "validation": {"max_bytes": 128},
+      "note": "first_name=+0x2D8, last_name=+0x2E0, common_name=+0x2E8（实测 Richarlison='Richarlison'；兼任教练 +0xF8）"
+    },
+    "dob": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "fm_date",
+      "offset": 784,
+      "validation": {"min_age": 14, "max_age": 55},
+      "note": "ACTUAL_PLAYER+0x310 (u16 doy, u16 year)（兼任教练 +0xF8 -> 0x408）"
+    },
+    "height_cm": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u16",
+      "offset": 558,
+      "validation": {"min": 140, "max": 225},
+      "note": "ACTUAL_PLAYER+0x22E (PLAYING_DATA+0xE6)"
+    },
+    "positions": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u8_array",
+      "offset": 336,
+      "count": 15,
+      "labels": ["GK", "SW", "DL", "DC", "DR", "DM", "ML", "MC", "MR", "AML", "AMC", "AMR", "ST", "WBL", "WBR"],
+      "note": "实机热刺全队核验 +0x150..+0x15E：Porro=WBR/DR/MR, Udogie=DL/WBL, Solanke=ST, Vicario=GK"
+    },
+    "visible_attributes": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u8_array_scaled_5_round",
+      "offset": 351,
+      "count": 36,
+      "raw_count": 54,
+      "scale": 5,
+      "validation": {"min": 1, "max": 20},
+      "note": "ACTUAL_PLAYER+0x15F 54B 定长块（四舍五入 (raw+2)//5）；已排除 5 项隐藏属性(41/44/47/48/49)与左右脚(24/25)",
+      "index_map": {
+        "传中": 0, "盘带": 1, "射门": 2, "头球": 3, "远射": 4, "盯人": 5, "无球跑动": 6,
+        "传球": 7, "点球": 8, "抢断": 9, "视野": 10, "预判": 17, "决断": 18, "防守站位": 20,
+        "停球": 22, "技术": 23, "才华": 26, "角球": 27, "团队合作": 28, "工作投入": 29, "界外球": 30,
+        "爆发力": 34, "任意球": 35, "强壮": 36, "耐力": 37, "速度": 38, "弹跳": 39, "领导力": 40,
+        "平衡": 42, "勇敢": 43, "侵略性": 45, "灵活": 46, "自然体质": 50, "意志力": 51, "镇定": 52, "集中": 53
+      },
+      "labels": [
+        "角球", "传中", "盘带", "射门", "停球", "任意球", "头球", "远射", "界外球", "盯人", "传球", "点球", "抢断", "技术",
+        "侵略性", "预判", "勇敢", "镇定", "集中", "决断", "意志力", "才华", "领导力", "无球跑动", "防守站位", "团队合作", "视野", "工作投入",
+        "爆发力", "灵活", "平衡", "弹跳", "自然体质", "速度", "耐力", "强壮"
+      ]
+    },
+    "gk_attributes": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u8_array_scaled_5_round",
+      "offset": 351,
+      "scale": 5,
+      "validation": {"min": 1, "max": 20},
+      "note": "实机对比 Vicario/Kinsky/Courtois/Alisson/Raya/Donnarumma 锁定 11 项门将专属属性（配合传球7/停球22共13项）",
+      "index_map": {
+        "手控球": 11, "制空能力": 12, "指挥防守": 13, "交流": 14, "大脚开球": 15,
+        "手抛球": 16, "一对一": 19, "反应": 21, "神经指数": 31, "出击倾向": 32, "击球倾向": 33
+      }
+    },
+    "feet": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u8_pair_scaled_5",
+      "offset": 351,
+      "left_index": 24,
+      "right_index": 25,
+      "note": "实机核验 idx24=左脚(Kudus/van de Ven/Udogie/Kulusevski=100), idx25=右脚(Porro/Maddison/Solanke/Sarr=100)"
+    },
+    "condition": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u16",
+      "offset": 604,
+      "validation": {"min": 0, "max": 10000},
+      "note": "真机实测锁定 0x25C (604)：Brandon Austin(10000, jaded=-308) vs Pedro Porro(6700, jaded=+112)"
+    },
+    "sharpness": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u16",
+      "offset": 600,
+      "validation": {"min": 0, "max": 10000},
+      "note": "真机实测锁定 0x258 (600)：Pedro Porro(10000) vs Xavi Simons(4318, jaded=-353)"
+    },
+    "jadedness": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "i16",
+      "offset": 602,
+      "validation": {"min": -2000, "max": 2000},
+      "note": "真机实测 0x25A (602)：有符号疲劳度，主力赛后正值，久休负值"
+    },
+    "morale": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "unverified",
+      "type": "u8",
+      "offset": 592,
+      "validation": {"min": 0, "max": 20},
+      "note": "真机扫描出候选 u8(+0x26c/+0x316/+0x318)，未做 UI 对照实锤前严格保持 unverified"
+    },
+    "injury": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "unverified",
+      "type": "injury_struct",
+      "offset": 596,
+      "validation": {"max_days": 730},
+      "note": "INJURY_MANAGER(0x0586f848)+0x58 存 16B 记录(受伤日/复出日/row_id)，跨表映射与轻伤边界未实锤前严格保持 unverified"
+    },
+    "ca": {
+      "group": "scout",
+      "is_spoiler": true,
+      "status": "verified",
+      "type": "u16",
+      "offset": 612,
+      "validation": {"min": 1, "max": 200},
+      "note": "真机实测 0x264 (PLAYING_DATA+0x11C)，全员通过 CA<=PA"
+    },
+    "pa": {
+      "group": "scout",
+      "is_spoiler": true,
+      "status": "verified",
+      "type": "u16",
+      "offset": 614,
+      "validation": {"min": 1, "max": 200},
+      "note": "真机实测 0x266 (PLAYING_DATA+0x11E)"
+    },
+    "personality": {
+      "group": "scout",
+      "is_spoiler": true,
+      "status": "unverified",
+      "type": "u8_array",
+      "offset": 760,
+      "count": 8,
+      "validation": {"min": 1, "max": 20},
+      "note": "已定位 8 字节数组位于 +0x2F8（兼任教练 +0xF8），8 项次序待逐项核对，保持 unverified",
+      "labels": ["适应", "野心", "争议", "忠诚", "抗压", "职业", "体育精神", "情绪控制"]
+    },
+    "wage_weekly": {
+      "group": "contract",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u32",
+      "contract_ptr_offset": 816,
+      "offset": 32,
+      "validation": {"min": 0, "max": 100000000},
+      "note": "PLAYER+0x330 -> FULL_CONTRACT+0x20 (实测 Pape Matar Sarr=91850)"
+    },
+    "expiry_date": {
+      "group": "contract",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "fm_date",
+      "contract_ptr_offset": 816,
+      "offset": 72,
+      "validation": {"min_year": 2020, "max_year": 2160},
+      "note": "PLAYER+0x330 -> FULL_CONTRACT+0x48 (实测 Pape Matar Sarr=2030-07-01)"
+    },
+    "release_clause": {
+      "group": "contract",
+      "is_spoiler": false,
+      "status": "unverified",
+      "type": "u32",
+      "offset": null,
+      "validation": {"min": 0, "max": 2000000000}
+    },
+    "squad_number": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "u8",
+      "contract_ptr_offset": 816,
+      "offset": 93,
+      "none_value": 255,
+      "validation": {"min": 1, "max": 99},
+      "note": "PLAYER+0x330 -> FULL_CONTRACT+0x5D（255=无号）。2026-11-23 steam_27.1.0 热刺存档实机核验：一线队 26 人号码互不重复，Maddison=10/Porro=23/van de Ven=37；外租球员在母队为 255。仅 steam_27.1.0 已核验"
+    },
+    "club_finance": {
+      "group": "basic",
+      "is_spoiler": false,
+      "status": "verified",
+      "type": "vtable_ptr",
+      "offset": 336,
+      "note": "CLUB+0x150 -> CLUB_FINANCE（完整，0x4e52c38）或 CLUB_FINANCE_BASE（精简，0x4e52768）。2026-11-24 steam_27.1.0 实机：27,891 家有效俱乐部中完整 308 / 精简 27,583 / 空 0；仅作俱乐部准入三选一的佐证之一，绝不强绑完整财务"
+    }
+  }
+}
